@@ -1,0 +1,24 @@
+{
+  "name": "@lucka-labs/eli",
+  "version": "0.1.0",
+  "description": "Elegant way to build elements",
+  "main": "dest/index.js",
+  "types": "dest/index.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lucka-me/eli.git#main"
+  },
+  "author": "Lucka (https://lucka.moe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucka-me/eli/issues"
+  },
+  "homepage": "https://github.com/lucka-me/eli#readme",
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  }
+}
