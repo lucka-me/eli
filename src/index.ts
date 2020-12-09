@@ -1,11 +1,7 @@
-type PartialStyle = {
-    [P in keyof CSSStyleDeclaration]?: CSSStyleDeclaration[P]
-};
+type PartialStyle = Partial<CSSStyleDeclaration>;
 
-type EliOptions<K extends keyof HTMLElementTagNameMap> = {
-    [P in keyof HTMLElementTagNameMap[K]]?: HTMLElementTagNameMap[K][P];
-} & {
-    styles?: PartialStyle;
+type EliOptions<K extends keyof HTMLElementTagNameMap> = Omit<Partial<HTMLElementTagNameMap[K]>, 'style'> & {
+    style?: PartialStyle;
     [name: string]: any;
 };
 
@@ -14,7 +10,7 @@ export function eli<K extends keyof HTMLElementTagNameMap>(
 ): HTMLElementTagNameMap[K] {
     const element = document.createElement(tag);
     for (const [key, value] of Object.entries(options)) {
-        if (key === 'styles') {
+        if (key === 'style') {
             for (const [styleKey, styleValue] of Object.entries(value as PartialStyle)) {
                 (element.style as any)[styleKey] = styleValue;
             }
