@@ -2,8 +2,8 @@
   "name": "@lucka-labs/eli",
   "version": "0.1.0",
   "description": "Elegant way to build elements",
-  "main": "dest/index.js",
-  "types": "dest/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
     "build": "tsc"
