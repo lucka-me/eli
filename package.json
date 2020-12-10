@@ -1,6 +1,6 @@
 {
   "name": "@lucka-labs/eli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Elegant way to build elements",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
