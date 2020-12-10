@@ -1,5 +1,14 @@
+/**
+ * Partial `style`, all properties are optional
+ */
 type PartialStyle = Partial<CSSStyleDeclaration>;
 
+/**
+ * Partial element interface, all properties are optional.
+ * 
+ * The `style` is replaced with a partial one.  
+ * Supports any attributes not included in the original interface, like ARIA.
+ */
 type EliOptions<K extends keyof HTMLElementTagNameMap> = Omit<Partial<HTMLElementTagNameMap[K]>, 'style'> & {
     style?: PartialStyle;
     [name: string]: any;
@@ -7,9 +16,9 @@ type EliOptions<K extends keyof HTMLElementTagNameMap> = Omit<Partial<HTMLElemen
 
 /**
  * Build an element
- * @param tag Tag name of the element, will be passed to `createElement`
- * @param options Attributes of the elements
- * @param children Child elements
+ * @param tag Tag name of the element, will be passed to `createElement`, required
+ * @param options Attributes of the elements, optional
+ * @param children Child elements or strings, optional
  */
 export function eli<K extends keyof HTMLElementTagNameMap>(
     tag: K, options?: EliOptions<K>, children?: Array<HTMLElement | SVGElement | string>
