@@ -15,13 +15,13 @@ Install with npm,
 $ npm install @lucka-labs/eli -D
 ```
 
-Then build elements:
+Then build elements with functioning autocompelete:
 
 ```ts
 @import { eli } from '@lucka-labs/eli';
 
 const box = eli('div', {
-    innerHTML: 'Hello World!'   // Autocompelete should works fine
+    innerHTML: 'Hello World!'
 });
 
 document.body.append(box);
