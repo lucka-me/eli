@@ -5,20 +5,7 @@ on:
     types: [ created ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: Initiate
-        run: npm ci
-      - name: Build Eli
-        run: npm run build
-  
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,6 +15,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Initiate
         run: npm ci
+      - name: Build Eli
+        run: npm run build
       - name: Publish to NPM
         run: npm publish --access public
         env:
